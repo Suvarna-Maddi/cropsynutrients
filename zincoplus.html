@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Discover Agrostar, an organic fertilizer rich in microorganisms for better soil nutrition. Learn more about its benefits and usage.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="Explore Organic Fields - the best place to buy organic nutrients for your fields. Boost your crop yield with eco-friendly, natural solutions.">
+  <meta name="keywords" content="organic nutrients, farming solutions, eco-friendly, sustainable farming, organic farming">
+  <meta name="author" content="Your Name">
+    <title>Zinco plus | Cropsy Nutrients</title>
+    <style>
+        
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.curved-navbar {
+    position: relative;
+    background: linear-gradient(90deg, #4CAF50, #2A9D8F);
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* Further reduced curve */
+.curved-navbar::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Even less vertical shift */
+    left: 0;
+    width: 100%;
+    height: 15px; /* Even more reduced height */
+    background: linear-gradient(to bottom, #4CAF50, #ffffff);
+    border-radius: 0 0 10% 10%; /* Reduce the roundness further */
+    z-index: -1;
+}
+
+  /* Brand section */
+  .brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .brand-logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+
+  /* Navigation links */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links li {
+    position: relative;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white; /* Default color for desktop */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #FFD700;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+    transition: all 0.3s ease;
+  }
+        .foot-content {
+    max-width: 1200px;
+    width: 90%;
+    text-align: center; /* Center-aligns text within the footer content */
+    margin: 0 auto; /* Centers the entire footer content block */
+}
+
+.certificates-heading {
+    font-size: 1.5rem; /* Adjust heading size as needed */
+    font-weight: bold;
+    color: #fff; /* Ensures visibility on the footer background */
+    margin-bottom: 20px; /* Adds spacing between the heading and certificates */
+}
+        .certificates {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap; /* Keeps images in a horizontal row */
+    gap: 5px;
+    overflow-x: auto; /* Enables horizontal scroll if needed on small screens */
+    padding: 10px 0;
+}
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      width: 200px;
+      padding: 20px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+      display: flex;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .nav-links a {
+      color: black; /* Change to black text on mobile */
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  /* Animation for slide down */
+  @keyframes slideDown {
+    from {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .brand-logo {
+mix-blend-mode: multiply; /* Blend the white background with the parent */
+display: block;
+width: 100%; /* Adjust as needed */
+max-width: 100px; /* Adjust as needed */
+}
+        .product-showcase {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: -10px;
+           top: 25px;
+           margin-bottom: 20px; 
+        }
+
+        .curved-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh;
+            z-index: -1;
+        }
+
+        .showcase-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 8rem;
+            width: 80%;
+            max-width: 1200px;
+            animation: slideIn 1s ease-out;
+            overflow: hidden;
+        }
+
+        .showcase-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(' ');
+            background-repeat: no-repeat;
+            background-size: 400px;
+            background-position: center;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .showcase-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-section {
+            text-align: center;
+            position: relative;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 12px;
+            transform: translateZ(0);
+            transition: transform 0.5s;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05) rotate(-3deg);
+            cursor: pointer;
+        }
+
+        .details-section h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .details-section {
+    position: relative;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 50px 30px 30px 30px; /* Default padding: top, right, bottom, left */
+    margin: 80px auto 30px auto;  /* Default margin for top, bottom, and center alignment */
+    border-radius: 8px;
+    max-width: 1500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+/* Adding the before pseudo-element for the background image */
+.details-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('cropsy nutrients_preview_rev_1.png') no-repeat center;
+    background-size: 24%;
+    opacity: 0.4;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Media Query for Mobile Screens (Max Width: 768px) */
+@media (max-width: 768px) {
+    .details-section {
+        padding: 20px 15px 20px 15px; /* Added padding to left, right, and bottom for mobile view */
+        margin: 20px auto;  /* Centered with auto left and right margins */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Adjust the background image size for better responsiveness */
+    .details-section::before {
+        background-size: contain;
+    }
+
+    /* Ensure images are responsive */
+    .details-section img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem; /* Space between the image and details */
+    }
+}
+
+/* Media Query for Tablets and Larger Devices (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    .details-section {
+        padding: 40px 25px 30px 25px; /* Adjusted padding for tablets and medium devices */
+        margin-bottom: 30px;  /* Added bottom margin */
+        margin-left: 20px; /* Added left margin for better spacing */
+        margin-right: 20px; /* Added right margin for better spacing */
+    }
+}
+
+/* For desktop screens */
+@media (min-width: 1025px) {
+    .details-section {
+        padding: 50px 30px 30px 30px; /* Large padding with same values as before */
+        margin-left: 50px; /* Adds gap on left side */
+        margin-right: 50px; /* Adds gap on right side */
+    }
+}
+
+/* Footer Styles */
+#footer {
+  position: relative;
+  background: linear-gradient(to top, #4CAF50, #2A9D8F, #ffffff);
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;  
+}
+
+/* Footer Container */
+#footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Quick Links Section */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between links */
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffc107;
+}
+
+/* Certifications Section */
+.foot-content {
+    margin-top: 20px;
+}
+
+.certificates-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.certificates {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between certificate images */
+}
+
+.certificates img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Specific Styles for ISO and Organic Certificates */
+.certificates img.organic, 
+.certificates img.iso {
+    border-radius: 50%;
+}
+
+.certificates img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Maintain layout in small screens */
+    .footer-links {
+        gap: 10px;
+    }
+
+    .certificates img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <header class="curved-navbar">
+        <div class="brand">
+            <img src="cropsylogo.jpeg" alt="Brand Logo" class="brand-logo">
+            <span class="brand-name"></span>
+        </div>
+        <nav>
+ <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+                  <li><a href="tel:+918341997766">Contact Us</a></li>
+
+ </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="product-showcase">
+                <div class="image-section">
+                    <img src="zincoplus.png" alt="Product Image" class="product-image">
+                </div>
+                <div class="details-section"><br>
+                  <h2 class="product-title"><br><br>
+                 ZINCO PLUS</h2>
+            <p> ZINCO Plus is a Vital plant nutrient that helps in 
+                development of root tips and shoot tips.
+                 Zinc is a Micronutrient fertilizer for all crops.
+                 Zink in Zinco plus is taken up by the plant via leaves and 
+                roots.
+                 For a rapid and through effect,the product should be 
+                applied as a foliar fertilizer. 
+                </p>
+                 <p><b>Dosage:</b> 100grm per acre</p>
+              </div>
+              </div>
+              
+        </div>
+    </main>
+     <footer class="foot" id="footer">
+      <div class="container">
+          <!-- Quick Links -->
+          <div class="footer-top">
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                  <li><a href="products.html">Products</a></li>
+                  <li><a href="tel:+918341997766">Contact</a></li>
+                  <li><a href="https://wa.me/918341997766?text=Hello%20Cropsy%20Nutrients" target="_blank">WhatsApp</a></li>
+              </ul>
+          </div>
+  
+          <!-- Certifications -->
+          <div class="foot-content">
+              <h4 class="certificates-heading">Our Certifications</h4>
+              <div class="certificates">
+                  <img src="organic certificate.jpg" alt="Certification 1" class="organic">
+                  <img src="iso certificate.png" alt="Certification 2" class="iso">
+                  <img src="mnslogo.jpg" alt="Certification 3">
+                  <img src="ugafs certificate.png" alt="Certification 4">
+              </div>
+          </div>
+      </div>
+  </footer>
+  
+  
+    <script>
+      function toggleMenu() {
+          const navLinks = document.querySelector('.nav-links');
+          const hamburger = document.querySelector('.hamburger');
+          navLinks.classList.toggle('active');
+          hamburger.classList.toggle('open');
+      }
+  </script>
+</body>
+
+</html>
