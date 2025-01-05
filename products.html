@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Cropsy Nutrients Products</title>
+  <style>
+    /* General styles */
+    .products {
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .products h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Grid layout for products */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Styling for product containers */
+    /* Adjusted positioning for the product tag */
+.product-container {
+  position: relative;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+/* Position the product tag without gaps at the left and bottom */
+.product-tag {
+  position: absolute;
+  bottom: 0;  /* Remove gap by setting bottom to 0 */
+  left: 0;    /* Attach the tag to the left of the container */
+  background-color: #279030;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 0 0 8px 0; /* Rounded only at the bottom */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure no margins/padding between the tag and the container */
+.product-tag i {
+  margin-right: 5px;
+}
+
+ 
+
+    /* Hover effect on product container */
+    .product-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image styling */
+    .product-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+   
+  
+
+    /* Mobile view (2 products per row) */
+    @media (max-width: 576px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Adjust container size */
+      .product-container {
+        max-width: 100%; /* Allow containers to take the full width available */
+      }
+    }
+    /*navbar*/
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.curved-navbar {
+    position: relative;
+    background: linear-gradient(90deg, #4CAF50, #2A9D8F);
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* Further reduced curve */
+.curved-navbar::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Even less vertical shift */
+    left: 0;
+    width: 100%;
+    height: 15px; /* Even more reduced height */
+    background: linear-gradient(to bottom, #4CAF50, #ffffff);
+    border-radius: 0 0 10% 10%; /* Reduce the roundness further */
+    z-index: -1;
+}
+
+  /* Brand section */
+  .brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .brand-logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+
+  /* Navigation links */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links li {
+    position: relative;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white; /* Default color for desktop */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #FFD700;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+    transition: all 0.3s ease;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      width: 200px;
+      padding: 20px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+      display: flex;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .nav-links a {
+      color: black; /* Change to black text on mobile */
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  /* Animation for slide down */
+  @keyframes slideDown {
+    from {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .brand-logo {
+mix-blend-mode: multiply; /* Blend the white background with the parent */
+display: block;
+width: 100%; /* Adjust as needed */
+max-width: 100px; /* Adjust as needed */
+}
+/* Footer Styles */
+#footer {
+  position: relative;
+  background: linear-gradient(to top, #4CAF50, #2A9D8F, #ffffff);
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;  
+}
+
+/* Footer Container */
+#footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Quick Links Section */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between links */
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffc107;
+}
+
+/* Certifications Section */
+.foot-content {
+    margin-top: 20px;
+}
+
+.certificates-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.certificates {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between certificate images */
+}
+
+.certificates img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Specific Styles for ISO and Organic Certificates */
+.certificates img.organic, 
+.certificates img.iso {
+    border-radius: 50%;
+}
+
+.certificates img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Maintain layout in small screens */
+    .footer-links {
+        gap: 10px;
+    }
+
+    .certificates img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+  </style>
+</head>
+<body>
+  <header class="curved-navbar">
+    <div class="brand">
+      <img src="cropsylogo.jpeg" alt="Brand Logo" class="brand-logo">
+      <span class="brand-name"></span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                  <li><a href="tel:+918341997766">Contact Us</a></li>
+
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+  <!-- Carousel Section -->
+ <!-- Carousel Section -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="margin-top: 5px;">
+      <img src="slide1.webp" class="d-block w-100" alt="Slide 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Experience Organic Farming</h5>
+        <p>Sustainable practices for a greener future.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="margin-top: 5px;">
+      <img src="slide2.webp" class="d-block w-100" alt="Slide 2">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Growing Abundance</h5>
+        <p>Where every seed promises a bountiful harvest.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="margin-top: 5px;">
+      <img src="slide3.webp" class="d-block w-100" alt="Slide 3">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Your Journey to Health</h5>
+        <p>Begin your wellness path with nature’s finest.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="margin-top: 5px;">
+      <img src="slide4.webp" class="d-block w-100" alt="Slide 4">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Eco-Friendly Solutions</h5>
+        <p>Nurturing nature with organic innovations.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="margin-top: 5px;">
+      <img src="slide5.webp" class="d-block w-100" alt="Slide 5">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Healthy Harvests</h5>
+        <p>Empowering farmers to grow sustainably.</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+  <!-- Product Section -->
+  <section class="products">
+    <div class="product-grid">
+      <div class="product-container">
+        <a href="agrostar.html" class="product-item">
+          <img src="Agrostar.png" alt="Agrostar">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> Agro Star</span>
+      </div>
+      <div class="product-container">
+        <a href="aayush.html" class="product-item">
+          <img src="aayush.png" alt="Aayush">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Aayush</span>
+      </div>
+       <div class="product-container">
+        <a href="amruth.html" class="product-item">
+          <img src="amruth.png" alt="Aayush">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Amruth</span>
+      </div>
+      <div class="product-container">
+        <a href="asthragold.html" class="product-item">
+          <img src="asthragold.png" alt="Asthragold">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Asthra Gold</span>
+      </div>
+      
+      <div class="product-container">
+        <a href="balwan.html" class="product-item">
+          <img src="balwan.png" alt="Balwan">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Balwan</span>
+      </div>
+      <div class="product-container">
+        <a href="bevonplus.html" class="product-item">
+          <img src="bevonplus.png" alt="Bevon Plus">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Bevon Plus</span>
+      </div>
+      <div class="product-container">
+        <a href="bactolan.html" class="product-item">
+          <img src="Bactolan.png" alt="Bactolan">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Bactolan</span>
+      </div>
+      <div class="product-container">
+        <a href="C-10.html" class="product-item" >
+          <img src="C-10.png" alt="C-10">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>C-10</span>
+      </div>
+      <div class="product-container">
+        <a href="carbo+.html" class="product-item" >
+          <img src="carbo+.png" alt="Carbo+">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Carbo+</span>
+      </div>
+      <div class="product-container">
+        <a href="dhoda plus.html" class="product-item" >
+          <img src="dhodaplus.png" alt="Dhoda Plus">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Dhoda Plus</span>
+      </div>
+      <div class="product-container">
+        <a href="dr.excel.html" class="product-item" >
+          <img src="drexcel.png" alt="Dr-Excel">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Dr.Excel</span>
+      </div>
+       <div class="product-container">
+        <a href="herbalplant.html" class="product-item" >
+          <img src="herbalplant.png" alt="Herbal Plant">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Herbal Plant</span>
+      </div>
+      <div class="product-container">
+        <a href="icon+.html" class="product-item">
+          <img src="icon+.png" alt="Icon+">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Icon+</span>
+      </div>
+      <div class="product-container">
+        <a href="loud.html" class="product-item" >
+          <img src="loud.png" alt="Loud">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Loud</span>
+      </div>
+      <div class="product-container">
+        <a href="loud1.html" class="product-item" >
+          <img src="loud1.png" alt="Loud">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Loud+</span>
+      </div>
+      <div class="product-container">
+        <a href="micro-7.html" class="product-item">
+          <img src="micro-7.png" alt="Micro-7">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> Micro-7</span>
+      </div>
+      <div class="product-container">
+        <a href="magic-6.html" class="product-item">
+          <img src="magic-6.png" alt="Magic-6">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Magic-6</span>
+      </div>
+      <div class="product-container">
+        <a href="mg-10.html" class="product-item">
+          <img src="mg-10.png" alt="Mg-10">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> Mg-10</span>
+      </div>
+      <div class="product-container">
+        <a href="magic-99.html" class="product-item">
+          <img src="magic-99.png" alt="Magic-99">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Magic-99</span>
+      </div>
+      <div class="product-container">
+        <a href="natco.html" class="product-item" >
+          <img src="natco.png" alt="Natco">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Natco+</span>
+      </div>
+      <div class="product-container">
+        <a href="neemastra.html" class="product-item" >
+          <img src="neemastra.png" alt="Neemastra">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Neemastra</span>
+      </div>
+      <div class="product-container">
+        <a href="omega.html" class="product-item" >
+          <img src="omega.png" alt="Omega">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Omega</span>
+      </div>
+      <div class="product-container">
+        <a href="poushak.html" class="product-item" >
+          <img src="poushak.png" alt="Poushak">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Poushak</span>
+      </div>
+       <div class="product-container">
+        <a href="power.html" class="product-item" >
+          <img src="power.png" alt="Power">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Power</span>
+      </div>
+      <div class="product-container">
+        <a href="Protecter.html" class="product-item">
+          <img src="Protecter.png" alt="Protector">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> Protector</span>
+      </div> 
+      <div class="product-container">
+        <a href="Redhorse.html" class="product-item">
+          <img src="Redhorse.png" alt="Redhorse">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> Redhorse</span>
+      </div>
+      <div class="product-container">
+        <a href="starshakti.html" class="product-item" >
+          <img src="starshakti.png" alt="Starshakti">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Starshakti</span>
+      </div>
+      <div class="product-container">
+        <a href="superfast.html" class="product-item" >
+          <img src="superfast.png" alt="Superfast">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Superfast</span>
+      </div>
+     
+      <div class="product-container">
+        <a href="samrudh.html" class="product-item" >
+          <img src="samrudh.png" alt="Samrudh">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Samrudh</span>
+      </div>
+       <div class="product-container">
+        <a href="dap.html" class="product-item" >
+          <img src="DAP.png" alt="Simba">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Simba</span>
+      </div>
+       <div class="product-container">
+        <a href="sonafhal.html" class="product-item" >
+          <img src="sonafhal.png" alt="Sona Fhal">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Sona fhal</span>
+      </div>
+      <div class="product-container">
+        <a href="sonaphal.html" class="product-item">
+          <img src="sonaphal.png" alt="Sonaphal">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Sonaphal</span>
+      </div>
+      <div class="product-container">
+        <a href="supermax.html" class="product-item">
+          <img src="supermax.png" alt="Supermax">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> Supermax</span>
+      </div>
+   
+   
+      <!-- You can continue adding more products... -->
+      <div class="product-container">
+        <a href="star shakti.html" class="product-item">
+          <img src="star shakti.png" alt="Star Shakti">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> Star Shakti</span>
+      </div> 
+      <div class="product-container">
+        <a href="star gold.html" class="product-item">
+          <img src="star gold.png" alt="Star Gold">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Star Gold</span>
+      </div>
+
+     
+      <div class="product-container">
+        <a href="sm gold.html" class="product-item">
+          <img src="sm gold.png" alt="SM Gold">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> SM Gold</span>
+      </div>
+      <div class="product-container">
+        <a href="suraksha gold.html" class="product-item">
+          <img src="suraksha gold.png" alt="Suraksha Gold">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> Suraksha Gold</span>
+      </div>
+      <div class="product-container">
+        <a href="top-10.html" class="product-item" >
+          <img src="top-10.png" alt="Top-10">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Top-10</span>
+      </div>
+      <div class="product-container">
+        <a href="terramax.html" class="product-item">
+          <img src="terramax.png" alt="Terramax">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i> Terramax</span>
+      </div>
+      <div class="product-container">
+        <a href="ultra.html" class="product-item" >
+          <img src="ultra.png" alt="ultra">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Ultra</span>
+      </div>
+      <div class="product-container">
+        <a href="zincoplus.html" class="product-item" >
+          <img src="zincoplus.png" alt="Zinco plus">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Zinco Plus</span>
+      </div>
+      <div class="product-container">
+        <a href="zincrop.html" class="product-item" >
+          <img src="zincrop.png" alt="zincrop">
+        </a>
+        <span class="product-tag"><i class="fas fa-seedling"></i>Zincrop</span>
+      </div>
+    </div>
+  </section>
+   <footer class="foot" id="footer">
+      <div class="container">
+          <!-- Quick Links -->
+          <div class="footer-top">
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                  <li><a href="products.html">Products</a></li>
+                  <li><a href="tel:+918341997766">Contact</a></li>
+                  <li><a href="https://wa.me/918341997766?text=Hello%20Cropsy%20Nutrients" target="_blank">WhatsApp</a></li>
+              </ul>
+          </div>
+  
+          <!-- Certifications -->
+          <div class="foot-content">
+              <h4 class="certificates-heading">Our Certifications</h4>
+              <div class="certificates">
+                  <img src="organic certificate.jpg" alt="Certification 1" class="organic">
+                  <img src="iso certificate.png" alt="Certification 2" class="iso">
+                  <img src="mnslogo.jpg" alt="Certification 3">
+                  <img src="ugafs certificate.png" alt="Certification 4">
+              </div>
+          </div>
+      </div>
+  </footer>
+  
+  
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger');
+  
+      // Toggle the nav menu visibility
+      navLinks.classList.toggle('active');
+  
+      // Add or remove the "open" class for animation
+      hamburger.classList.toggle('open');
+    }
+  </script>  
+  <!-- Bootstrap JS (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

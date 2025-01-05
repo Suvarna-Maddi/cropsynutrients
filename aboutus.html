@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Organic Fields - the best place to buy organic nutrients for your fields. Boost your crop yield with eco-friendly, natural solutions.">
+    <meta name="keywords" content="organic nutrients, farming solutions, eco-friendly, sustainable farming, organic farming">
+    <meta name="author" content="cropsy">
+    <title>About Us</title>
+</head>
+<style>
+   
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.curved-navbar {
+    position: relative;
+    background: linear-gradient(90deg, #4CAF50, #2A9D8F);
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/* Further reduced curve */
+.curved-navbar::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Even less vertical shift */
+    left: 0;
+    width: 100%;
+    height: 15px; /* Even more reduced height */
+    background: linear-gradient(to bottom, #4CAF50, #ffffff);
+    border-radius: 0 0 10% 10%; /* Reduce the roundness further */
+    z-index: -1;
+}
+
+  /* Brand section */
+  .brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .brand-logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+
+  /* Navigation links */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links li {
+    position: relative;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white; /* Default color for desktop */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #FFD700;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+    transition: all 0.3s ease;
+  }
+   /* Responsive design */
+   @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      width: 200px;
+      padding: 20px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+      display: flex;
+      animation: slideDown 0.5s ease forwards;
+    }
+
+    .nav-links a {
+      color: black; /* Change to black text on mobile */
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  /* Animation for slide down */
+  @keyframes slideDown {
+    from {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .brand-logo {
+mix-blend-mode: multiply; /* Blend the white background with the parent */
+display: block;
+width: 100%; /* Adjust as needed */
+max-width: 100px; /* Adjust as needed */
+}
+/* About Section */
+
+.about {
+    background: rgb(224, 251, 222);
+    background: linear-gradient(360deg, rgb(245, 255, 245) 0%, rgb(173, 252, 163) 100%);
+    padding: 100px 0 20px 0;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #323030;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    
+}
+
+.about-info {
+    margin: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.about-img {
+    width: 20rem;
+    height: 20rem;
+}
+
+.about-img img {
+    width: 95%;
+    height: 95%;
+    border-radius: 5px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.about-info p {
+    font-size: 1.2rem;
+    color: #323030;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+   
+}
+
+button {
+    border: none;
+    outline: 0;
+    padding: 10px;
+    margin: 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #40b736;
+    text-align: center;
+    cursor: pointer;
+    width: 15rem;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #1f9405;
+}
+
+
+
+
+@media (max-width: 768px) {
+    nav {
+        display: block;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        justify-content: space-between;
+    }
+
+    .nav-links li {
+        margin-right: 0;
+    }
+
+    .about h1 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    .about-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        width: 60%;
+        height: 60%;
+        margin-bottom: 1rem;
+    }
+
+    .about-info p {
+         font-size: 1rem; /* Reduces font size on smaller screens */
+        margin: 0 10px;
+        
+    }
+
+    .about-info button {
+        margin: 1rem 2rem;
+        width: 10rem;
+    }
+
+    .team {
+        margin: 0 1rem;
+    }
+}
+.mission {
+    background: rgb(224, 251, 222);
+    background: linear-gradient(360deg, rgb(245, 255, 245) 0%, rgb(173, 252, 163) 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #323030;
+}
+
+/* Container for mission content */
+.mission .mission-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 15px; /* Adds some space between the container and text/image */
+}
+
+/* Text styling */
+.mission p {
+    font-size: 1.2rem;
+    color: #323030;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Image container */
+.mission .mission-img {
+    flex: 1;
+    max-width: 500px;  /* Restricts image width for larger screens */
+}
+
+/* Image styling */
+.mission .mission-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds slight shadow around the image */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .mission .mission-content {
+        flex-direction: column;
+        align-items: center; /* Centers content vertically */
+        text-align: center;  /* Centers the text for smaller screens */
+    }
+
+    .mission p {
+        font-size: 1rem; /* Reduces font size on smaller screens */
+        margin: 0 10px;
+    }
+
+    .mission .mission-img {
+        width: 80%; /* Reduces image width on mobile for better alignment */
+        max-width: 350px;
+        margin-top: 20px; /* Adds space between text and image on mobile */
+    }
+
+    .mission h2 {
+        font-size: 2rem; /* Reduces font size for header on mobile */
+    }
+}
+
+/* Tablet responsiveness (for devices between 768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .mission .mission-content {
+        gap: 1rem; /* Reduces the gap between the elements */
+    }
+
+    .mission p {
+        font-size: 1.1rem;
+    }
+
+    .mission .mission-img {
+        max-width: 400px; /* Keeps image width moderately sized */
+    }
+}
+.certifications {
+    background: rgb(224, 251, 222);
+    background: linear-gradient(360deg, rgb(245, 255, 245) 0%, rgb(173, 252, 163) 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.certifications h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #323030;
+}
+
+.certifications-content {
+    margin-bottom: 30px;
+}
+
+.certifications p {
+    font-size: 1.2rem;
+    color: #323030;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.certifications-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 15px;
+}
+
+.certification {
+    text-align: center;
+    max-width: 220px;
+}
+
+.certification img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.certification p {
+    font-size: 1rem;
+    color: #323030;
+    margin-top: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .certifications-content p{
+         font-size: 1rem; /* Reduces font size on smaller screens */
+         margin: 0 10px;
+        
+    }
+    .certifications .certifications-content {
+        text-align: center;
+    }
+
+    .certifications .certifications-logos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certification {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .certifications-logos {
+        gap: 1rem;
+    }
+
+    .certification {
+        max-width: 250px;
+    }
+
+    .certification img {
+        max-width: 100%;
+    }
+}
+/* Footer Styles */
+#footer {
+  position: relative;
+  background: linear-gradient(to top, #4CAF50, #2A9D8F, #ffffff);
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;  
+}
+
+/* Footer Container */
+#footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Quick Links Section */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between links */
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffc107;
+}
+
+/* Certifications Section */
+.foot-content {
+    margin-top: 20px;
+}
+
+.certificates-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.certificates {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between certificate images */
+}
+
+.certificates img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Specific Styles for ISO and Organic Certificates */
+.certificates img.organic, 
+.certificates img.iso {
+    border-radius: 50%;
+}
+
+.certificates img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Maintain layout in small screens */
+    .footer-links {
+        gap: 10px;
+    }
+
+    .certificates img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+</style>
+<body>
+    <header class="curved-navbar">
+        <div class="brand">
+            <img src="cropsylogo.jpeg" alt="Brand Logo" class="brand-logo">
+            <span class="brand-name"></span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="products.html">Products</a></li>
+                  <li><a href="tel:+918341997766">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="about">
+        <h1>About Us</h1>
+        <p style="font-weight: bold">
+            "Driven by Expertise,<br> Committed to Quality and Growth"
+        </p>
+        <div class="about-info">
+            <div class="about-img">
+                <img src="25years.jpeg" alt="about us">
+            </div>
+            <div>
+            <p> Welcome to Cropsy Nutrients
+
+                Founded in 2017 in Gadwal District, Telangana, Cropsy Nutrients is a forward-thinking agricultural company dedicated to providing farmers with the essential nutrients needed to grow healthy, high-quality crops. Our company was established by a team of industry experts with over 25 years of experience in the agriculture input sector. We combine our deep expertise with a passion for enhancing farming productivity and sustainability.
+            </p>
+            </div>
+        </div>
+    </section>
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <div class="mission-content">
+          <p>Our mission is to enhance the quality of life of the growing population by providing Indian farmers with better fertilizers, including Micronutrients, Biofertilizers, and Plant Growth Regulators. We are committed to helping farmers grow healthy and affordable food, ensuring sustainability and improved yields for the future.</p>
+          <div class="mission-img">
+              <img src="ourmission.jpeg" alt="Our Mission" />
+          </div>
+      </div>
+  </section>
+  <section class="certifications">
+    <div class="certifications-content">
+        <h2>Our Certifications</h2>
+                <p>We pride ourselves on adhering to the highest industry standards and continuously ensuring that our products and practices meet rigorous quality requirements. Our certifications demonstrate our commitment to quality, sustainability, and excellence in everything we do.</p>
+    </div>
+    <div class="certifications-logos">
+        <div class="certification">
+            <img src="organic certificate.jpg" alt="Fresh From Nature Organic Certification" style="width: 200px; height: 200px; border-radius: 50%; align-items: center;"><br><br>
+            <b>100% Organic Certified</b>
+            <p>Our products are certified to be 100% organic, ensuring that we only provide nature-friendly and chemical-free solutions.</p>
+        </div>
+        <div class="certification">
+          <img src="iso certificate.png" alt="ISO 9001:2015 Certification" style="width: 200px; height: 200px; border-radius: 50%; display: block; margin: 0 auto;align-items: center;"><br><br>
+          <b>ISO 9001:2015 Certified</b>
+          <p>We are committed to providing high-quality products and services, with a proven and internationally recognized system for managing quality.</p>
+      </div>
+      <div class="certification">
+          <img src="ugafs certificate.png" alt="UGAFS Accredited" style="width: 180px; height: 180px; display: block; margin: 0 auto;align-items: center;"><br><br>
+          <b>UGAFS Accredited</b>
+          <p>As an accredited organization, we align with the best agricultural standards for safety, sustainability, and product performance.</p>
+      </div>
+      
+        <div class="certification">
+            <img src="mnslogo.jpg" alt="MNS Certification" style="align-items: center;"><br><br>
+            <b>MNS Certified</b>
+            <p>We uphold industry regulations and produce products that are certified to deliver reliable and effective solutions.</p>
+          </p>
+        </div>
+    </div>
+</section>
+ <footer class="foot" id="footer">
+      <div class="container">
+          <!-- Quick Links -->
+          <div class="footer-top">
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                  <li><a href="products.html">Products</a></li>
+                  <li><a href="tel:+918341997766">Contact</a></li>
+                  <li><a href="https://wa.me/918341997766?text=Hello%20Cropsy%20Nutrients" target="_blank">WhatsApp</a></li>
+              </ul>
+          </div>
+  
+          <!-- Certifications -->
+          <div class="foot-content">
+              <h4 class="certificates-heading">Our Certifications</h4>
+              <div class="certificates">
+                  <img src="organic certificate.jpg" alt="Certification 1" class="organic">
+                  <img src="iso certificate.png" alt="Certification 2" class="iso">
+                  <img src="mnslogo.jpg" alt="Certification 3">
+                  <img src="ugafs certificate.png" alt="Certification 4">
+              </div>
+          </div>
+      </div>
+  </footer>
+  
+  
+    <script>
+        
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        }
+    </script>
+</body>
+
+</html>
